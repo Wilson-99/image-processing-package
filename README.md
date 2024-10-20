@@ -1,9 +1,5 @@
 # package_name
-
-Description. 
-The package package_name is used to:
-	- 
-	-
+Este projeto é uma biblioteca de processamento de imagens que fornece funções para comparação de imagens, transferência de histogramas e redimensionamento de imagens. Utiliza as bibliotecas `scikit-image` e `NumPy` para manipulação de imagens.
 
 ## Installation
 
@@ -21,7 +17,13 @@ file1_name.my_function()
 ```
 
 ## Author
-My_name
+Wilson Justino
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+
+
+
+
+pypi-AgENdGVzdC5weXBpLm9yZwIkMWNlYWQ5OGQtZGZhZS00ZDc2LWFlMGItMGYwYWRiN2ZhYzdkAAIqWzMsIjRlOWU2Yjg4LTI1ZGItNDIzMy05YTUyLTEwNjQwMTQ5ZDJiNiJdAAAGIPNkVCtm2-1NaK8EiIYpzhrpgl8TW18d51M1m5t96MWq
