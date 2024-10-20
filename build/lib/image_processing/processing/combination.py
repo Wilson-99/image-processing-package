@@ -17,7 +17,6 @@ def find_difference(image1: np.ndarray, image2: np.ndarray) -> (np.ndarray, floa
     Levanta:
         ValueError: Se as imagens não tiverem a mesma forma ou não forem válidas.
     """
-    # Verifica se as entradas são arrays NumPy e têm a mesma forma
     if not isinstance(image1, np.ndarray) or not isinstance(image2, np.ndarray):
         raise ValueError("Ambas as entradas devem ser arrays NumPy.")
     if image1.shape != image2.shape:
@@ -26,15 +25,13 @@ def find_difference(image1: np.ndarray, image2: np.ndarray) -> (np.ndarray, floa
     gray_image1 = rgb2gray(image1)
     gray_image2 = rgb2gray(image2)
 
-    # Especifica o data_range baseado nos valores possíveis de pixel
-    data_range = gray_image1.max() - gray_image1.min()  # ou usar uma constante como 1 se normalizado entre 0 e 1
+    data_range = gray_image1.max() - gray_image1.min()  
 
     score, difference_image = structural_similarity(gray_image1, gray_image2, full=True, data_range=data_range)
     
-    # Normaliza a imagem de diferença
     normalized_difference_image = (difference_image - np.min(difference_image)) / (np.max(difference_image) - np.min(difference_image))
     
-    return normalized_difference_image, score  # Retorna a imagem de diferença normalizada e a similaridade
+    return normalized_difference_image, score 
 
 
 def transfer_histogram(image1: np.ndarray, image2: np.ndarray) -> np.ndarray:
@@ -56,5 +53,5 @@ def transfer_histogram(image1: np.ndarray, image2: np.ndarray) -> np.ndarray:
     if not isinstance(image1, np.ndarray) or not isinstance(image2, np.ndarray):
         raise ValueError("Ambas as entradas devem ser arrays numpy.")
 
-    matched_image = match_histograms(image1, image2)  # Removido o argumento 'multichannel'
+    matched_image = match_histograms(image1, image2)  
     return matched_image

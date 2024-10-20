@@ -16,11 +16,10 @@ def resize_image(image: np.ndarray, proportion: float) -> np.ndarray:
         raise ValueError("Especifique uma proporção válida entre 0 e 1.")
     
     if proportion == 0:
-        # Retornar uma imagem vazia com o número correto de canais
         return np.empty((0, 0, image.shape[2]), dtype=image.dtype)
 
     if proportion == 1:
-        return image  # Retorna a imagem original sem redimensionamento
+        return image 
     
     height = round(image.shape[0] * proportion)
     width = round(image.shape[1] * proportion)

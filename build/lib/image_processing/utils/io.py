@@ -1,5 +1,5 @@
 import os
-import numpy as np  # Adicione esta importação
+import numpy as np  
 from skimage.io import imread, imsave
 
 def read_image(path: str, as_gray: bool = False):
@@ -19,9 +19,8 @@ def save_image(image, path: str):
     if image is None or (not isinstance(image, np.ndarray) or image.size == 0):
         raise ValueError("Imagem inválida. O objeto de imagem não pode ser nulo ou vazio.")
 
-    # Converte a imagem para uint8 se for do tipo float
     if image.dtype == np.float64:
-        image = (image * 255).astype(np.uint8)  # Supondo que a imagem esteja na faixa [0, 1]
+        image = (image * 255).astype(np.uint8)  
 
     try:
         imsave(path, image)
